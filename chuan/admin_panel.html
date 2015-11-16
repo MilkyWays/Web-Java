@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Admin Panel</title>
+	<!-- Latest compiled and minified CSS & JS -->
+	<link rel="stylesheet" media="screen" href="css/bootstrap.min.css">
+	<script src="css/jquery.js"></script>
+	<script src="css/bootstrap.min.js"></script>
+	<style type="text/css">
+		body{
+			background-image: url("background1.png");
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-position: center;
+			background-size: cover;
+		}
+	</style>
+
+</head>
+<body>
+
+	<div class="container">
+
+		<!-- Logo -->
+		<a href="hcmute.edu.vn"><img src="banner.png" alt="logo"></a>
+		<br>
+		<!-- Navbar -->
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>                        
+					</button>
+					<a class="navbar-brand" href="#">Admin</a>
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav navbar-right">
+					<li><a href="#"><img src="avatar.png" width="25" height="25">Admin</a></li>
+						<li><a href="login.html"><img src="log-out.png" width="28" height="28">Log Out</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!-- Menu -->
+		<ul class="nav nav-tabs">
+			<li class="active"><a data-toggle="tab" href="#home"><h4>Account Management</h4></a></li>
+			<li><a data-toggle="tab" href="#menu1"><h4>Form Management</h4></a></li>
+		</ul>
+
+		<div class="tab-content">
+			<!-- Create Account -->
+			<div id="home" class="tab-pane fade in active">
+				<div class="panel panel-info">
+					<div class="panel-heading">Infomation</div>
+					<div class="panel-body">
+						<form class="form-horizontal" role="form" >
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="name">Name: </label>
+								<div class="col-sm-5">
+									<input type="text" class="form-control" id="name" placeholder="Input user name">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="faculty">Falculty: </label>
+								<div class="col-sm-5">
+									<select class="form-control" name="" id="falculty">
+										<option value="fit">Infomation Technology</option>
+										<option value="feee">Electric - Electronic</option>
+										<option value="fff">Foreign Language</option>
+										<option value="fhq">High Qualiti</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="bo_mon">Subject: </label>
+								<div class="col-sm-5">
+									<select name="" class="form-control" id="bo_mon" >
+										<option value="software">Software Engeneering</option>
+										<option value="network">Netword</option>
+										<option value="base_it">Industry Electric</option>
+										<option value="sys_info">System Infomation</option> 
+									</select>
+								</div>
+							</div>  
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="positon">Permission: </label>
+								<div class="col-sm-5">
+									<select name="" class="form-control" id="position">
+										<option value="Dean">Dean</option>
+										<option value="BR">Board of Rectors</option>
+										<option value="lecturer">Lecturer</option>
+										<option value="dept">Dept of Organization & Personnel</option>   
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="object">Title:</label>
+								<div class="col-sm-5">          
+									<input type="text"  class="form-control" id="object" placeholder="Input the title of username">
+								</div>
+							</div>      
+							<div class="form-group">
+								<label for="id_teach" class="control-label col-sm-2">
+									ID: 
+								</label>
+								<div class="col-sm-5">
+									<input type="text" class="form-control" id="id_teach" placeholder="Input ID of username">
+								</div>      
+							</div>            
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="boss">Superior: </label>
+								<div class="col-sm-5">
+									<select name="" class="form-control"  id="boss">
+										<option value="123">Đặng Thanh Dũng</option>
+										<option value="12345">Đỗ Văn Dũng</option>
+									</select>
+								</div>   
+							</div>
+							<div class="form-group">   
+								<div class="col-xs-offset-2">
+									<div class="btn-group btn-group-justified">
+										<div class="button-group">
+											<button type="button" onclick="btnAdd()" class="btn btn-info">Add</button>       
+											<button type="button" onclick="btnChange()" class="btn btn-info">Edit</button>          
+											<button type="button" onclick="btnDelete()" class="btn btn-info">Delete</button>            
+											<button type="button" onclick="btnSave()" class="btn btn-info">Save</button>       
+											<button type="button" onclick="btnCanel()" class="btn btn-info">Cancel</button> 
+										</div>                 
+									</div>
+								</div>              
+							</div>
+						</form>        
+					</div>
+					<table class="table table-bordered table-hover">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>Name</th>
+								<th>ID</th>
+								<th>Falculty</th>
+								<th>Subject</th>
+								<th>Title</th>
+								<th>Superior</th>
+							</tr>
+						</thead>
+						<tr>
+							<td>1</td>
+							<td>Nguyễn Thanh An</td>
+							<td>13110031</td>
+							<td>Information Technology</td>
+							<td>Doctor</td>
+							<td>Lecture</td>
+							<td>Đặng Thanh Dũng</td>
+						</tr>							
+
+					</table>
+				</div>  
+			</div>
+			<!-- Tạo biểu mẫu -->
+			<div id="menu1" class="tab-pane fade">
+				<div class="well">
+					<div class="form-horizontal" role="form">
+						<div class="form-group">
+							<label class="form-label col-sm-2" for="group_target">Nhóm mục tiêu: </label>
+							<div class="col-sm-5">
+								<select class="form-control" name="" id="group_target">
+									<option value="teaching">Teaching</option>
+									<option value="research">
+										Scientific research</option>
+										<option value="serve">Serve</option>
+									</select>
+								</div>      
+							</div>
+						</div>
+					</div>
+
+
+					<div class="panel panel-info">
+						<div class="panel-heading">Infomation</div>
+						<div class="panel-body">
+							<form class="form-horizontal" role="form" >
+								<div class="row">
+									<div class="col-sm-8">
+										<div class="form-group">
+											<label class="control-label col-md-3" for="name">Mục tiêu chi tiết</label>
+											<div class="col-md-5">
+												<input type="text" class="form-control" id="name" placeholder="Nhập nội dung chi tiết các mục tiêu">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="control-label col-md-3" for="point_max">Điểm KPI Max </label>
+											<div class="col-md-5">
+												<input type="text" class="form-control" id="name" placeholder="Nhập điểm KPI Max ">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="control-label col-md-3" for="bo_mon">Chỉ tiêu đăng ký</label>
+											<div class="col-md-5">
+												<input type="text" class="form-control" id="name" placeholder="Để trống ô này" disabled>
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label class="control-label col-md-3" for="positon">Kết quả thực hiện HK1 </label>
+											<div class="col-sm-5">
+												<input type="text" class="form-control" id="name" placeholder="Để trống ô này" disabled>
+											</div>
+										</div>    
+										<div class="form-group">
+											<label class="control-label col-md-3" for="object">Kết quả thực hiện cả năm</label>
+											<div class="col-md-5">          
+												<input type="text"  class="form-control" id="object" placeholder="Để trống ô này" disabled>
+											</div>
+										</div>   
+										<div class="form-group">   
+											<div class="col-md-offset-2">
+												<div class="btn-group btn-group-justified">
+													<div class="button-group">
+														<button type="button" onclick="btnAdd()" class="btn btn-info">Add</button>       
+														<button type="button" onclick="btnChange()" class="btn btn-info">Edit</button>          
+														<button type="button" onclick="btnDelete()" class="btn btn-info">Delete</button>            
+														<button type="button" onclick="btnSave()" class="btn btn-info">Save</button>       
+														<button type="button" onclick="btnCanel()" class="btn btn-info">Cancel</button> 
+													</div>                 
+												</div>
+											</div>           
+										</div>
+									</div>
+									<div class="col-md-4">
+										<table class="table table-hover">			
+											<thead>
+												<tr><center><h4>Thời gian đăng ký</h4></center>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Ngày bắt đầu</td>
+													<td>
+														<input type="text" name="" id="input" class="form-control" value="" required="required" pattern="" title="">
+													</td>									
+												</tr>
+												<tr>
+													<td>Ngày kết thúc</td>
+													<td><input type="text" name="" id="input" class="form-control" value="" required="required" pattern="" title=""></td>
+												</tr>
+											</tbody>
+
+										</table>
+										<table class="table table-hover">
+											<thead>
+												<tr>
+
+													<center>
+														<h4>Thời gian duyệt	</h4>
+													</center>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Ngày bắt đầu</td>
+													<td>
+														<input type="text" name="" id="input" class="form-control" value="" required="required" pattern="" title="">
+													</td>									
+												</tr>
+												<tr>
+													<td>Ngày kết thúc</td>
+													<td><input type="text" name="" id="input" class="form-control" value="" required="required" pattern="" title=""></td>
+												</tr>
+
+											</tbody>
+										</table>
+									</div>									
+								</div>
+							</form>
+						</div>
+						<div class="">
+							<table class="table table-bordered table-hover">
+								<thead>
+									<tr>
+										<th>STT</th>
+										<th>Mục tiêu chi tiết</th>
+										<th>Điểm KPI Max</th>
+										<th>Chỉ tiêu đăng ký</th>
+										<th>Kết quả thực hiện HKI</th>
+										<th>Kết quả thực hiện cả năm</th>
+
+									</tr>
+								</thead>
+								<tr>
+									<td>1</td>
+									<td>Đề tài NCKH, Hướng dẫn SV NCKH
+									</td>
+									<td>20
+									</td>
+									<td>
+									</td>
+									<td>
+									</td>
+									<td>
+									</td>
+								</tr>
+
+
+							</table>
+						</div>  
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	</html>
